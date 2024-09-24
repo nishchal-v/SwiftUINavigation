@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var appRouter: AppRouter
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button {
+                appRouter.append(MainRouterPath.screen1)
+            } label: {
+                Text("Go to Screen 1")
+            }
         }
         .padding()
     }
